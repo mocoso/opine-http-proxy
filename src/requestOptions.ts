@@ -124,19 +124,9 @@ export async function createRequestInit(
 const encoder = new TextEncoder();
 
 export function asBuffer(body: any) {
-  if (typeof body === "object") {
-    return encoder.encode(JSON.stringify(body));
-  } else if (typeof body === "string") {
-    return encoder.encode(body);
-  }
-
   return body;
 }
 
 export function asBufferOrString(body: any) {
-  if (typeof body === "object") {
-    return JSON.stringify(body);
-  }
-
   return body;
 }

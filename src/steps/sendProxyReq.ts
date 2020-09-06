@@ -50,7 +50,7 @@ export function sendProxyReq(state: ProxyState) {
     const bufferedResponse = await res.arrayBuffer();
     state.proxy.resData = bufferedResponse === null
       ? null
-      : decoder.decode(bufferedResponse);
+      : bufferedResponse;
 
     return state;
   });

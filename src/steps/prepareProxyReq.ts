@@ -4,11 +4,7 @@ import { asBuffer, asBufferOrString } from "../requestOptions.ts";
 const encoder = new TextEncoder();
 
 function getContentLength(body: any): number {
-  if (body instanceof Uint8Array) {
     return body.byteLength;
-  }
-
-  return encoder.encode(body).byteLength;
 }
 
 export function prepareProxyReq(state: ProxyState) {
